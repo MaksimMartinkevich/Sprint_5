@@ -2,16 +2,16 @@ from random import randint
 
 
 class Url:
-    main_page = "https://stellarburgers.nomoreparties.site/"
-    login_page = f"{main_page}login"
-    registration_page = f"{main_page}register"
-    profile_page = f"{main_page}account/profile"
+    MAIN_PAGE = "https://stellarburgers.nomoreparties.site/"
+    LOGIN_PAGE = f"{MAIN_PAGE}login"
+    REGISTRATION_PAGE = f"{MAIN_PAGE}register"
+    PROFILE_PAGE = f"{MAIN_PAGE}account/profile"
 
 
 class Data:
-    name = 'Maksim'
-    email = 'm.martinkevich_1999@gmail.com'
-    password = '123456'
+    NAME = 'Maksim'
+    EMAIL = 'm.martinkevich_1999@gmail.com'
+    PASSWORD = '123456'
 
 
 class RandomUser:

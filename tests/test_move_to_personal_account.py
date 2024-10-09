@@ -8,11 +8,12 @@ from selenium.webdriver.support.wait import WebDriverWait
 class TestPersonalAccount:
 
     def test_move_to_personal_account(self, driver):
-        driver.get(Url.main_page)
-        driver.find_element(*Locators.account_button).click()
-        driver.find_element(*Locators.input_email).send_keys(Data.email)
-        driver.find_element(*Locators.input_password).send_keys(Data.password)
-        driver.find_element(*Locators.login_button_login_page).click()
-        driver.find_element(*Locators.account_button).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(Locators.header_profile))
-        assert driver.current_url == Url.profile_page
+        driver.get(Url.MAIN_PAGE)
+        driver.find_element(*Locators.ACCOUNT_BUTTON).click()
+        driver.find_element(*Locators.INPUT_EMAIL).send_keys(Data.EMAIL)
+        driver.find_element(*Locators.INPUT_PASSWORD).send_keys(Data.PASSWORD)
+        driver.find_element(*Locators.LOGIN_BUTTON_LOGIN_PAGE).click()
+        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(Locators.ACCOUNT_BUTTON))
+        driver.find_element(*Locators.ACCOUNT_BUTTON).click()
+        WebDriverWait(driver, 5).until(expected_conditions.presence_of_element_located(Locators.HEADER_PROFILE))
+        assert driver.current_url == Url.PROFILE_PAGE

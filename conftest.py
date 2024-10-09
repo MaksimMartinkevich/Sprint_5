@@ -6,6 +6,6 @@ from data import Url
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome()
-    driver.get(Url.main_page)
+    driver.get(Url.MAIN_PAGE)
     yield driver
     driver.quit()
